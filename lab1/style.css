@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    min-width: 1120px;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    padding: 20px;
+    background-color: #33333357;
+    border: 1px solid #ccc;
+    margin: 10px;
+
+    font-family: serif;
+    font-size: 18px;
+    color: black;
+}
+
+header h1 {
+    margin-top: 0px;
+    font-size: 28px;
+}
+
+main {
+    padding: 20px;
+}
+
+.top-section {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.top-section::after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+.graph-section {
+    box-sizing: border-box;
+    float: left;
+    width: 450px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.graph-section h2 {
+    margin-top: 0;
+}
+
+.graph-section canvas {
+    display: block;
+}
+
+.form-section {
+    box-sizing: border-box;
+    float: left;
+    width: 500px;
+    height: 480px;
+    padding: 20px;
+    margin-left: 100px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+#errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.results-section {
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.results-section h2::after {
+    content: "↓";
+    font-size: 26px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#resultsTable {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultsTable th,
+#resultsTable td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    word-break: break-all;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #555;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+}
+
+input,
+select,
+button {
+    padding: 5px;
+    margin: 5px;
+}
+
