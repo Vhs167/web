@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("coordinateCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -12,6 +11,7 @@ const scale = 64;
 
 
 const ALLOWED_R = ["1", "1.5", "2", "2.5", "3"];
+const ALLOWED_Y = ["-2", "-1.5", "-1", "-0.5", "0", "0.5", "1", "1.5", "2"];
 
 Decimal.set({precision: 50});
 
@@ -197,6 +197,9 @@ function validateY(yValue) {
     if (yValue === null || yValue === undefined || String(yValue).trim() === "") {
         throw new Error("Выберите значение Y");
     }
+    if(!ALLOWED_Y.includes(yValue)) {
+        throw new Error("Значение не входит в допустимые значения");
+    }
 
     return parceDecimal(yValue, "Y");
 }
@@ -254,12 +257,12 @@ form.addEventListener("submit", function(event) {
 
     draw();
 
-    const result = checkPoint(x, y, r);
+    const result = checkPoint(x, y.plus(r), r);
     const date = new Date();
     
-    saveResult(x, y, r, result, date.toISOString());
+    saveResult(x, y.plus(r), r, result, date.toISOString());
 
-    addResultTotable(x, y, r, result, date.toLocaleString("ru-RU"));
+    addResultTotable(x, y.plus(r), r, result, date.toLocaleString("ru-RU"));
 });
 
 
