@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>Лабораторная работа 1</title>
+
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <h1>Проверка попадания точки в область</h1>
+
+            <p>ФИО: Ягодинский Михаил Александрович</p>
+            <p>Группа: P3209</p>
+            <p>Вариант: 12653</p>
+        </header>
+
+        <main class="main">
+            <div class="top-section">
+                <section class="graph-section">
+                    <h2>Координатная плоскость</h2>
+
+                    <canvas id="coordinateCanvas"
+                            width="400"
+                            height="400">
+                    </canvas>
+                </section>
+
+                <section class="form-section">
+                    <h2>Ввод данных:</h2>
+
+                    <form id="pointForm">
+                        <p>Выберите X:</p>
+
+                        <div class="form-group">
+                            <label for="-5">-5</label>
+                                <input type="radio" id="-5" name="x" value="-5">
+                            <label for="-4">-4</label>
+                                <input type="radio" id="-4" name="x" value="-4">
+                            <label for="-3">-3</label>
+                                <input type="radio" id ="-3" name="x" value="-3">
+                            <label for="-2">-2</label>
+                                <input type="radio" id="-2" name="x" value="-2">
+                            <label for="-1">-1</label>
+                                <input type="radio" id="-1" name="x" value="-1">
+                            <label for="0">0</label>
+                                <input type="radio" id ="0" name="x" value="0">
+                            <label for="x_1">1</label>
+                                <input type="radio" id="x_1" name="x" value="1">
+                            <label for="2">2</label>
+                                <input type="radio" id="2" name="x" value="2">
+                            <label for="3">3</label>
+                                <input type="radio" id ="3" name="x" value="3">
+                        </div>
+
+                        <div class="form-group">
+                            <p>Введите Y(-5 ... 5): </p>
+
+                                <input type="text" id="y" name="y" placeholder="Значение Y">
+                        </div>
+                    
+
+                        <div class="form-group">
+                            <p>Выберите R:</p>
+                            <label for="r_1">1</label>
+                                <input type="checkbox" id="r_1" name="r" value="1">
+                            <label for="r_1-5">1.5</label>
+                                <input type="checkbox" id="r_1-5" name="r" value="1.5">
+                            <label for="r_2">2</label>
+                                <input type="checkbox" id="r_2" name="r" value="2">
+                            <label for="r_2-5">2.5</label>
+                                <input type="checkbox" id="r_2-5" name="r" value="2.5">
+                            <label for="r_3">3</label>
+                                <input type="checkbox" id="r_3" name="r" value="3">
+                        </div>
+
+                        <div id="errorMessage"></div>
+
+                        <button type="submit">Проверить</button>
+                        <button type="reset">Сбросить</button>
+                    </form>
+                </section>
+            </div>
+
+            <section class="results-section">
+                <h2>Результаты</h2>
+
+                <table id="resultsTable">
+
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>Результат</th>
+                            <th>Дата и время</th>
+                            <th>Время работы, мс.</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="resultBody">
+
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.4.3/decimal.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
